@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Plant, Sun, Cloud, ArrowRight } from 'lucide-react';
+import { Leaf, Sun, Cloud, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -47,7 +47,7 @@ const Hero = () => {
                         i % 2 === 0 ? 'bg-garden-green-light bg-opacity-40' : 'bg-garden-brown-light bg-opacity-30'
                       }`}
                     >
-                      {i % 3 === 0 ? <Plant className="text-garden-green-dark" /> : 
+                      {i % 3 === 0 ? <Leaf className="text-garden-green-dark" /> : 
                        i % 3 === 1 ? <Sun className="text-garden-brown" /> : 
                        <Cloud className="text-gray-500" />}
                     </div>

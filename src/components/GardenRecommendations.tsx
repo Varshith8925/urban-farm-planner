@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Plant, Sun, Sprout, Flower, CloudRain } from 'lucide-react';
+import { Leaf, Sun, Sprout, Flower, CloudRain } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
@@ -193,11 +193,11 @@ const GardenRecommendations = ({ spaceDetails, selectedDesignId }: GardenRecomme
   
   const getPlantIconByType = (type: string) => {
     switch (type) {
-      case 'vegetable': return <Plant className="h-5 w-5 text-garden-green" />;
+      case 'vegetable': return <Leaf className="h-5 w-5 text-garden-green" />;
       case 'herb': return <Sprout className="h-5 w-5 text-garden-green-light" />;
       case 'flower': return <Flower className="h-5 w-5 text-garden-brown" />;
-      case 'fruit': return <Plant className="h-5 w-5 text-garden-brown-light" />;
-      default: return <Plant className="h-5 w-5 text-garden-green" />;
+      case 'fruit': return <Leaf className="h-5 w-5 text-garden-brown-light" />;
+      default: return <Leaf className="h-5 w-5 text-garden-green" />;
     }
   };
 

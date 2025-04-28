@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -7,19 +6,15 @@ import GardenDesign from '../components/GardenDesign';
 import GardenRecommendations from '../components/GardenRecommendations';
 import CareReminders from '../components/CareReminders';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Plant } from 'lucide-react';
+import { Leaf } from 'lucide-react';
 
-// Mock design data - in a real app, these would be generated based on user input
 const generateDesigns = (spaceDetails: SpaceDetails) => {
   const { width, length, sunlight, spaceType, preferences } = spaceDetails;
   
-  // Create a grid based on dimensions
-  // In a real app, this would be more sophisticated
   const cellSize = 1; // 1 foot per cell
   const cols = Math.max(3, Math.min(10, Math.floor(width / cellSize)));
   const rows = Math.max(3, Math.min(10, Math.floor(length / cellSize)));
   
-  // Generate 3 different layouts
   return [
     {
       id: 1,
@@ -35,7 +30,6 @@ const generateDesigns = (spaceDetails: SpaceDetails) => {
       ],
       layout: Array(rows).fill(0).map((_, r) => 
         Array(cols).fill(0).map((_, c) => {
-          // Pattern for container garden
           if ((r + c) % 3 === 0) return "plant";
           if ((r + c) % 3 === 1) return "sprout";
           return null;
@@ -55,7 +49,6 @@ const generateDesigns = (spaceDetails: SpaceDetails) => {
       ],
       layout: Array(rows).fill(0).map((_, r) => 
         Array(cols).fill(0).map((_, c) => {
-          // Pattern for vertical garden
           if (c < 2 && r % 2 === 0) return "plant";
           if (c < 2 && r % 2 === 1) return "sprout";
           if (c === cols - 1) return "flower";
@@ -78,7 +71,6 @@ const generateDesigns = (spaceDetails: SpaceDetails) => {
       ],
       layout: Array(rows).fill(0).map((_, r) => 
         Array(cols).fill(0).map((_, c) => {
-          // Pattern for mixed garden
           if (r < rows / 3) return c % 3 === 0 ? "plant" : c % 3 === 1 ? "sprout" : null;
           if (r < (rows / 3) * 2) return c % 2 === 0 ? "flower" : null;
           return c % 2 === 0 ? "sprout" : c % 3 === 0 ? "plant" : null;
@@ -99,10 +91,8 @@ const DesignPage = () => {
     const designs = generateDesigns(data);
     setDesignOptions(designs);
     setShowResults(true);
-    // Auto-select the first design
     setSelectedDesignId(designs[0].id);
     
-    // Scroll to results
     setTimeout(() => {
       const resultsElement = document.getElementById('design-results');
       if (resultsElement) {
@@ -153,7 +143,7 @@ const DesignPage = () => {
               {selectedDesignId && (
                 <div className="space-y-8">
                   <Alert className="bg-garden-green-light bg-opacity-10 border-garden-green-light">
-                    <Plant className="h-5 w-5 text-garden-green" />
+                    <Leaf className="h-5 w-5 text-garden-green" />
                     <AlertTitle>Design Selected!</AlertTitle>
                     <AlertDescription>
                       Below are plant recommendations and care reminders for your selected garden design.

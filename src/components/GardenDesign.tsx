@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Plant, Sun, Sprout, Flower } from 'lucide-react';
+import { Leaf, Sun, Sprout, Flower } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -28,7 +28,7 @@ const GardenDesign = ({ design, spaceDetails, onSelect, selected }: GardenDesign
   const getIcon = (iconType: string) => {
     switch (iconType) {
       case 'plant':
-        return <Plant className="h-4 w-4 text-garden-green" />;
+        return <Leaf className="h-4 w-4 text-garden-green" />;
       case 'sun':
         return <Sun className="h-4 w-4 text-garden-brown" />;
       case 'sprout':
@@ -36,7 +36,7 @@ const GardenDesign = ({ design, spaceDetails, onSelect, selected }: GardenDesign
       case 'flower':
         return <Flower className="h-4 w-4 text-garden-green-dark" />;
       default:
-        return <Plant className="h-4 w-4 text-garden-green" />;
+        return <Leaf className="h-4 w-4 text-garden-green" />;
     }
   };
   
